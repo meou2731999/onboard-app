@@ -8,7 +8,6 @@ export async function fetchHotelData(
     "https://interview-api.vercel.app/api/hotels/tokyo"
   );
   const hotels: Hotel[] = await hotelResponse.json();
-  console.log(hotels);
 
   const priceResponse = await fetch(
     `https://interview-api.vercel.app/api/hotels/tokyo/1/${currency}`
