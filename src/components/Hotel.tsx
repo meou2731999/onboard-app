@@ -68,9 +68,9 @@ const HotelComponent: React.FC<HotelProps> = ({ hotel, currency }) => {
         <div className="flex items-center mt-2">
           <span className="text-gray-600 mr-2">Tax-Inclusive:</span>
           <span className="font-semibold">*</span>
-          <div className="ml-2 text-sm text-gray-500">
-            <span>Tax: {taxesAndFees.tax}</span>
-            <span className="ml-4">Hotel Fees: {taxesAndFees.hotel_fees}</span>
+          <div className="block ml-2 text-sm text-gray-500">
+            <div>Tax: {taxesAndFees.tax}</div>
+            <div>Hotel Fees: {taxesAndFees.hotel_fees}</div>
           </div>
         </div>
       );
