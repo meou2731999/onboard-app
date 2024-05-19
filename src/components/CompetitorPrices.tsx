@@ -1,4 +1,3 @@
-// components/CompetitorPrices.tsx
 import React from "react";
 import type { Competitors, SupportedCurrency } from "@/types";
 
