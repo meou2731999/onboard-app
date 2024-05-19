@@ -1,7 +1,6 @@
-// components/__tests__/TaxInfo.test.tsx
 import { render, screen } from "@testing-library/react";
 import { TaxesAndFees } from "@/types";
-import TaxInfo from "./TaxInfo";
+import TaxInfo from "../TaxInfo";
 
 describe("TaxInfo Component", () => {
   it("renders tax-inclusive info correctly", () => {
