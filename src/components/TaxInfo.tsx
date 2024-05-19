@@ -1,4 +1,3 @@
-// components/TaxInfo.tsx
 import React from "react";
 import type { TaxesAndFees } from "@/types";
 
