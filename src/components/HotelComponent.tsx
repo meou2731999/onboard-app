@@ -1,4 +1,3 @@
-// components/HotelComponent.tsx
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import type {
@@ -8,6 +7,8 @@ import type {
   TaxesAndFees,
 } from "@/types";
 import Description from "./Description";
+import CompetitorPrices from "./CompetitorPrices";
+import TaxInfo from "./TaxInfo";
 
 interface HotelProps {
   hotel: Hotel;
@@ -28,54 +29,6 @@ const HotelComponent: React.FC<HotelProps> = ({ hotel, currency }) => {
     setCompetitors(hotel.competitors || null);
     setTaxesAndFees(hotel.taxes_and_fees || null);
   }, [hotel]);
-
-  const renderCompetitorPrices = () => {
-    if (!competitors) {
-      return null;
-    }
-
-    const competitorEntries = Object.entries(competitors);
-    const sortedCompetitors = competitorEntries.sort((a, b) => a[1] - b[1]);
-
-    return (
-      <div className="mt-4">
-        <h3 className="text-lg font-semibold">Competitor Prices:</h3>
-        <ul className="mt-2">
-          {sortedCompetitors.map(([name, competitorPrice], index) => (
-            <li key={index} className="flex items-center justify-between py-1">
-              <span>{name}:</span>
-              <span className="font-semibold">
-                {currency === "KRW"
-                  ? `${competitorPrice.toLocaleString()} KRW`
-                  : `${currency} ${competitorPrice}`}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  };
-
-  const renderTaxInfo = () => {
-    if (taxesAndFees) {
-      return (
-        <div className="flex items-center mt-2">
-          <span className="text-gray-600 mr-2">Tax-Inclusive:</span>
-          <span className="font-semibold">*</span>
-          <div className="block ml-2 text-sm text-gray-500">
-            <div>Tax: {taxesAndFees.tax}</div>
-            <div>Hotel Fees: {taxesAndFees.hotel_fees}</div>
-          </div>
-        </div>
-      );
-    } else {
-      return (
-        <div className="flex items-center mt-2">
-          <span className="text-gray-600 mr-2">Tax-Exclusive</span>
-        </div>
-      );
-    }
-  };
 
   return (
     <div className="p-4 border rounded-lg shadow-md mb-4">
@@ -103,8 +56,8 @@ const HotelComponent: React.FC<HotelProps> = ({ hotel, currency }) => {
             : `${currency} ${price}`}
         </span>
       </div>
-      {renderCompetitorPrices()}
-      {renderTaxInfo()}
+      <CompetitorPrices competitors={competitors || {}} currency={currency} />
+      <TaxInfo taxesAndFees={taxesAndFees} />
     </div>
   );
 };
