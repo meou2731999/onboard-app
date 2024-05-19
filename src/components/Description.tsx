@@ -18,7 +18,7 @@ const Description: React.FC<Props> = ({ description }) => {
   }, []);
 
   return (
-    <>
+    <div className="mt-4">
       <span
         ref={wraperRef}
         className={`text-gray-700 break-words ${
@@ -36,7 +36,7 @@ const Description: React.FC<Props> = ({ description }) => {
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
