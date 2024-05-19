@@ -42,4 +42,11 @@ describe("CompetitorPrices Component", () => {
     expect(screen.getByText("Expedia:")).toBeInTheDocument();
     expect(screen.getByText("280,000 KRW")).toBeInTheDocument();
   });
+
+  it("not renders competitor if data undefined", () => {
+    render(<CompetitorPrices competitors={undefined} currency="KRW" />);
+
+    // Assert the presence of rendered competitor prices
+    expect(screen.queryByText("Competitor Prices:")).not.toBeInTheDocument();
+  });
 });
