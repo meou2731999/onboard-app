@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Competitors } from "@/types";
-import CompetitorPrices from "./CompetitorPrices";
+import CompetitorPrices from "../CompetitorPrices";
 
 describe("CompetitorPrices Component", () => {
   it("renders competitor prices correctly", () => {
