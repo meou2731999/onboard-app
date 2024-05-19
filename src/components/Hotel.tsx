@@ -7,6 +7,7 @@ import type {
   SupportedCurrency,
   TaxesAndFees,
 } from "@/types";
+import Description from "./Description";
 
 interface HotelProps {
   hotel: Hotel;
@@ -47,13 +48,6 @@ const HotelComponent: React.FC<HotelProps> = ({ hotel, currency }) => {
                 {currency === "KRW"
                   ? `${competitorPrice.toLocaleString()} KRW`
                   : `${currency} ${competitorPrice}`}
-              </span>
-              <span className="text-green-500">
-                Save{" "}
-                {Math.round(
-                  ((competitorPrice - price!) / competitorPrice) * 100
-                )}
-                %
               </span>
             </li>
           ))}
@@ -96,15 +90,12 @@ const HotelComponent: React.FC<HotelProps> = ({ hotel, currency }) => {
           className="h-48 w-full"
         />
       </div>
-      <div
-        className="text-gray-700 mb-2"
-        dangerouslySetInnerHTML={{ __html: hotel.description }}
-      ></div>
+      <Description description={hotel.description} />
       <p className="text-gray-700 mb-2">Address: {hotel.address}</p>
       <p className="text-gray-700 mb-2">
         Stars: {hotel.stars} | Review Rating: {hotel.rating}/10
       </p>
-      <div className="flex items-center mt-2">
+      <div className="flex justify-between mt-2">
         <span className="text-gray-600 mr-2">Our Price:</span>
         <span className="font-semibold">
           {currency === "KRW"
