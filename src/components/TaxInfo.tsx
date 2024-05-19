@@ -2,7 +2,7 @@ import React from "react";
 import type { TaxesAndFees } from "@/types";
 
 interface TaxInfoProps {
-  taxesAndFees: TaxesAndFees | null;
+  taxesAndFees?: TaxesAndFees;
 }
 
 const TaxInfo: React.FC<TaxInfoProps> = ({ taxesAndFees }) => {

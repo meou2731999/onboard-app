@@ -18,7 +18,7 @@ describe("TaxInfo Component", () => {
   });
 
   it("renders tax-exclusive info correctly", () => {
-    render(<TaxInfo taxesAndFees={null} />);
+    render(<TaxInfo taxesAndFees={undefined} />);
 
     // Assert tax-exclusive text
     expect(screen.getByText("Tax-Exclusive")).toBeInTheDocument();
