@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from "react";
 import Head from "next/head";
-import HotelComponent from "@/components/Hotel";
+import HotelComponent from "@/components/HotelComponent";
 import type { Hotel, SupportedCurrency } from "@/types";
 import { fetchHotelData } from "@/lib/api";
 
