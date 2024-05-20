@@ -26,7 +26,7 @@ This project is a hotel search application built with Next.js, TypeScript, and T
 git clone https://github.com/meou2731999/hotel-app.git
 ```
 ```
-cd hotel-search-app
+cd hotel-app
 ```
 
 - Install dependencies:
