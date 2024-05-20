@@ -18,7 +18,7 @@ const Description: React.FC<Props> = ({ description }) => {
   }, []);
 
   return (
-    <>
+    <div>
       <h3 className="text-lg font-semibold">About Hotel:</h3>
       <span
         ref={wraperRef}
@@ -37,7 +37,7 @@ const Description: React.FC<Props> = ({ description }) => {
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
