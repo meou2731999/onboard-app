@@ -22,7 +22,6 @@ export interface Hotel {
   address: string;
   photo: string;
   description: string;
-  thumbnail: string;
   price?: number;
   competitors?: Competitors;
   taxes_and_fees?: TaxesAndFees;
