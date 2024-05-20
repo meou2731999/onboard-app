@@ -30,7 +30,7 @@ const Description: React.FC<Props> = ({ description }) => {
       {isOverflowing && (
         <div className="flex justify-end mt-2">
           <button
-            className="flex border border-blue-200 rounded py-1 px-2 hover:bg-blue-100 active:bg-blue-200 font-medium text-blue-500"
+            className="py-1 px-2 text-sm text-blue-500 border border-blue-200 rounded hover:bg-blue-100 active:bg-blue-200"
             onClick={() => setExpandText(!expandText)}
           >
             {expandText ? "Collapse" : "Read More"}
