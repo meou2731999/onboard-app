@@ -1,66 +1,94 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import type { Competitors, SupportedCurrency } from "@/types";
+import { render, screen } from "@testing-library/react";
 import CompetitorPrices from "../CompetitorPrices";
 
-describe("CompetitorPrices", () => {
-  it("renders rounded competitor prices in KRW correctly", () => {
-    const competitors: Competitors = {
-      Expedia: 300123.22,
-      HotelsCom: 250500.75,
-    };
-    const currency: SupportedCurrency = "KRW";
-    const { getByText } = render(
-      <CompetitorPrices competitors={competitors} currency={currency} />
-    );
-
-    expect(getByText("Competitor Prices:")).toBeInTheDocument();
-    expect(getByText("Expedia:")).toBeInTheDocument();
-    expect(getByText("KRW 300,100")).toBeInTheDocument();
-    expect(getByText("HotelsCom:")).toBeInTheDocument();
-    expect(getByText("KRW 250,500")).toBeInTheDocument();
+describe("CompetitorPrices component", () => {
+  test("renders nothing when no competitors are provided", () => {
+    render(<CompetitorPrices currency="USD" />);
+    expect(screen.queryByText("Competitor Prices:")).toBeNull();
   });
 
-  it("renders rounded competitor prices in USD correctly", () => {
-    const competitors: Competitors = {
-      Booking: 101.21,
-      Agoda: 99.99,
-    };
-    const currency: SupportedCurrency = "USD";
-    const { getByText } = render(
-      <CompetitorPrices competitors={competitors} currency={currency} />
-    );
-
-    expect(getByText("Competitor Prices:")).toBeInTheDocument();
-    expect(getByText("Booking:")).toBeInTheDocument();
-    expect(getByText("USD 101")).toBeInTheDocument();
-    expect(getByText("Agoda:")).toBeInTheDocument();
-    expect(getByText("USD 100")).toBeInTheDocument();
+  test("renders nothing when competitors are empty", () => {
+    render(<CompetitorPrices competitors={{}} currency="USD" />);
+    expect(screen.queryByText("Competitor Prices:")).toBeNull();
   });
 
-  it("renders correctly when no competitors are provided", () => {
-    const currency: SupportedCurrency = "USD";
-    const { container } = render(
-      <CompetitorPrices competitors={undefined} currency={currency} />
-    );
-
-    expect(container).toBeEmptyDOMElement();
+  test("renders nothing when no ourPrice is provided", () => {
+    const competitors = {
+      Traveloka: 120,
+      Expedia: 110,
+      Booking: 105,
+    };
+    render(<CompetitorPrices competitors={competitors} currency="USD" />);
+    expect(screen.queryByText("Competitor Prices:")).toBeNull();
   });
 
-  it("renders rounded competitor prices in JPY correctly", () => {
-    const competitors: Competitors = {
-      Rakuten: 7895.67,
-      Jalan: 6750.33,
+  test("renders competitor prices correctly", () => {
+    const competitors = {
+      Traveloka: 120,
+      Expedia: 110,
+      Booking: 105,
     };
-    const currency: SupportedCurrency = "JPY";
-    const { getByText } = render(
-      <CompetitorPrices competitors={competitors} currency={currency} />
+    render(
+      <CompetitorPrices
+        competitors={competitors}
+        currency="USD"
+        ourPrice={100}
+      />
     );
+    expect(screen.getByText("Competitor Prices:")).toBeInTheDocument();
+    expect(screen.getByText("Traveloka:")).toBeInTheDocument();
+    expect(screen.getByText("Expedia:")).toBeInTheDocument();
+    expect(screen.getByText("Booking:")).toBeInTheDocument();
+    expect(screen.getByText("USD 120")).toBeInTheDocument();
+    expect(screen.getByText("USD 110")).toBeInTheDocument();
+    expect(screen.getByText("USD 105")).toBeInTheDocument();
+  });
 
-    expect(getByText("Competitor Prices:")).toBeInTheDocument();
-    expect(getByText("Rakuten:")).toBeInTheDocument();
-    expect(getByText("JPY 7,900")).toBeInTheDocument();
-    expect(getByText("Jalan:")).toBeInTheDocument();
-    expect(getByText("JPY 6,800")).toBeInTheDocument();
+  test("renders savings correctly when ourPrice is cheaper", () => {
+    const competitors = {
+      Traveloka: 120,
+      Expedia: 110,
+      Booking: 105,
+    };
+    render(
+      <CompetitorPrices
+        competitors={competitors}
+        currency="USD"
+        ourPrice={100}
+      />
+    );
+    expect(screen.getByText("Competitor Prices:")).toBeInTheDocument();
+    expect(screen.getByText("Traveloka:")).toBeInTheDocument();
+    expect(screen.getByText("Expedia:")).toBeInTheDocument();
+    expect(screen.getByText("Booking:")).toBeInTheDocument();
+    expect(screen.getByText("USD 120")).toBeInTheDocument();
+    expect(screen.getByText("USD 110")).toBeInTheDocument();
+    expect(screen.getByText("USD 105")).toBeInTheDocument();
+    expect(screen.getByText("Savings:")).toBeInTheDocument();
+    expect(screen.getByText("USD 20")).toBeInTheDocument();
+  });
+
+  test("does not render savings when ourPrice is not cheaper", () => {
+    const competitors = {
+      Traveloka: 120,
+      Expedia: 110,
+      Booking: 105,
+    };
+    render(
+      <CompetitorPrices
+        competitors={competitors}
+        currency="USD"
+        ourPrice={130}
+      />
+    );
+    expect(screen.getByText("Competitor Prices:")).toBeInTheDocument();
+    expect(screen.getByText("Traveloka:")).toBeInTheDocument();
+    expect(screen.getByText("Expedia:")).toBeInTheDocument();
+    expect(screen.getByText("Booking:")).toBeInTheDocument();
+    expect(screen.getByText("USD 120")).toBeInTheDocument();
+    expect(screen.getByText("USD 110")).toBeInTheDocument();
+    expect(screen.getByText("USD 105")).toBeInTheDocument();
+    expect(screen.queryByText("Savings:")).toBeNull();
   });
 });

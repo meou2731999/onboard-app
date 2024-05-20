@@ -1,4 +1,3 @@
-// components/CompetitorPrices.tsx
 import React from "react";
 import type { Competitors, SupportedCurrency } from "@/types";
 import { roundPrice } from "@/utils/roundPrice";
@@ -14,7 +13,7 @@ const CompetitorPrices: React.FC<CompetitorPricesProps> = ({
   currency,
   ourPrice,
 }) => {
-  if (!competitors || Object.keys(competitors).length === 0) {
+  if (!competitors || Object.keys(competitors).length === 0 || !ourPrice) {
     return null;
   }
 
@@ -23,28 +22,26 @@ const CompetitorPrices: React.FC<CompetitorPricesProps> = ({
   const mostExpensive = sortedCompetitors[sortedCompetitors.length - 1][1];
 
   let savings: number | undefined;
-  if (ourPrice && mostExpensive && ourPrice < mostExpensive) {
+  if (mostExpensive && ourPrice < mostExpensive) {
     savings = mostExpensive - ourPrice;
   }
 
   return (
     <div className="mt-4">
       <h3 className="text-lg font-semibold">Competitor Prices:</h3>
-      {ourPrice && (
-        <ul className="mt-2">
-          {sortedCompetitors.map(([name, competitorPrice], index) => (
-            <li
-              key={index}
-              className="flex items-center justify-between py-1 text-sm"
-            >
-              <span>{name}:</span>
-              <span className="font-semibold text-sm">
-                {currency} {roundPrice(competitorPrice, currency)}
-              </span>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul className="mt-2">
+        {sortedCompetitors.map(([name, competitorPrice], index) => (
+          <li
+            key={index}
+            className="flex items-center justify-between py-1 text-sm"
+          >
+            <span>{name}:</span>
+            <span className="font-semibold text-sm">
+              {currency} {roundPrice(competitorPrice, currency)}
+            </span>
+          </li>
+        ))}
+      </ul>
       {savings && (
         <div className="flex items-center justify-between mt-2">
           <span className="text-lg font-bold text-red-600 mr-2">Savings:</span>
