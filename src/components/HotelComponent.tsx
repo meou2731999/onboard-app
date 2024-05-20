@@ -49,6 +49,7 @@ const HotelComponent: React.FC<HotelProps> = ({ hotel, currency }) => {
           <CompetitorPrices
             competitors={hotel.competitors}
             currency={currency}
+            ourPrice={hotel.price}
           />
         </div>
       </div>
