@@ -14,6 +14,7 @@ export async function fetchHotelData(
   );
   const priceDataList: PriceResponse[] = await priceResponse.json();
 
+  // Map price data to hotels
   for (const hotel of hotels) {
     const priceData = priceDataList.find((item) => item.id === hotel.id);
     if (priceData) {
@@ -23,5 +24,17 @@ export async function fetchHotelData(
     }
   }
 
-  return hotels;
+  // Push hotels with "Rates unavailable" to the bottom of the list
+  const sortedHotels = hotels.sort((a, b) => {
+    // Unavailable hotels should be pushed to the bottom
+    if (!a.price && b.price) {
+      return 1;
+    }
+    if (a.price && !b.price) {
+      return -1;
+    }
+    return 0;
+  });
+
+  return sortedHotels;
 }
