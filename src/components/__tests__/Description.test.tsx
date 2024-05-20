@@ -9,6 +9,8 @@ describe("Description Component", () => {
 
     render(<Description description={longText} />);
 
+    expect(screen.getByText("About Hotel:")).toBeInTheDocument();
+
     const descriptionElement = screen.getByText(longText);
     expect(descriptionElement).toHaveClass("line-clamp-5");
   });
@@ -18,6 +20,7 @@ describe("Description Component", () => {
 
     render(<Description description={shortText} />);
 
+    expect(screen.getByText("About Hotel:")).toBeInTheDocument();
     expect(screen.getByText(shortText)).toBeInTheDocument();
   });
 });

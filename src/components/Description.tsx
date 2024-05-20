@@ -18,7 +18,8 @@ const Description: React.FC<Props> = ({ description }) => {
   }, []);
 
   return (
-    <div className="mt-4">
+    <>
+      <h3 className="text-lg font-semibold">About Hotel:</h3>
       <span
         ref={wraperRef}
         className={`text-gray-700 break-words ${
@@ -32,11 +33,11 @@ const Description: React.FC<Props> = ({ description }) => {
             className="flex border rounded py-1 px-2 hover:bg-gray-200 active:bg-gray-300 font-medium"
             onClick={() => setExpandText(!expandText)}
           >
-            {expandText ? "Collapse" : "Expand"}
+            {expandText ? "Collapse" : "Read More"}
           </button>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
