@@ -22,15 +22,15 @@ const Description: React.FC<Props> = ({ description }) => {
       <h3 className="text-lg font-semibold">About Hotel:</h3>
       <span
         ref={wraperRef}
-        className={`text-gray-700 break-words ${
+        className={`text-gray-700 text-sm break-words ${
           !expandText ? "line-clamp-5" : ""
         }`}
         dangerouslySetInnerHTML={{ __html: description }}
       />
       {isOverflowing && (
-        <div className="flex justify-end">
+        <div className="flex justify-end mt-2">
           <button
-            className="flex border rounded py-1 px-2 hover:bg-gray-200 active:bg-gray-300 font-medium"
+            className="flex border border-blue-200 rounded py-1 px-2 hover:bg-blue-100 active:bg-blue-200 font-medium text-blue-500"
             onClick={() => setExpandText(!expandText)}
           >
             {expandText ? "Collapse" : "Read More"}
