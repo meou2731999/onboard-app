@@ -41,6 +41,11 @@ npm run dev
 ```
 - Open http://localhost:3000 in your browser to see the application.
 
+- Run unit test:
+```
+npm test
+```
+
 ## Usage
 
 - Select a currency from the dropdown menu to see hotel prices in the selected currency.
