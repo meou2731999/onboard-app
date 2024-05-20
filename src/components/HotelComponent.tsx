@@ -1,11 +1,5 @@
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import type {
-  Competitors,
-  Hotel,
-  SupportedCurrency,
-  TaxesAndFees,
-} from "@/types";
+import type { Hotel, SupportedCurrency } from "@/types";
 import Description from "./Description";
 import CompetitorPrices from "./CompetitorPrices";
 import TaxInfo from "./TaxInfo";
