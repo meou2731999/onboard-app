@@ -43,7 +43,7 @@ const Home: React.FC = () => {
           onChange={(e) =>
             handleCurrencyChange(e.target.value as SupportedCurrency)
           }
-          className="p-2 border rounded"
+          className="p-1 border rounded"
         >
           <option value="USD">USD</option>
           <option value="SGD">SGD</option>
@@ -52,7 +52,7 @@ const Home: React.FC = () => {
         </select>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 gap-4">
         {hotels.length > 0 ? (
           hotels.map((hotel) => (
             <HotelComponent key={hotel.id} hotel={hotel} currency={currency} />
