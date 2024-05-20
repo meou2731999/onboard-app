@@ -16,9 +16,9 @@ describe("CompetitorPrices", () => {
 
     expect(getByText("Competitor Prices:")).toBeInTheDocument();
     expect(getByText("Expedia:")).toBeInTheDocument();
-    expect(getByText("300,100 KRW")).toBeInTheDocument();
+    expect(getByText("KRW 300,100")).toBeInTheDocument();
     expect(getByText("HotelsCom:")).toBeInTheDocument();
-    expect(getByText("250,500 KRW")).toBeInTheDocument();
+    expect(getByText("KRW 250,500")).toBeInTheDocument();
   });
 
   it("renders rounded competitor prices in USD correctly", () => {
@@ -47,20 +47,20 @@ describe("CompetitorPrices", () => {
     expect(container).toBeEmptyDOMElement();
   });
 
-  it("renders rounded competitor prices in SGD correctly", () => {
+  it("renders rounded competitor prices in JPY correctly", () => {
     const competitors: Competitors = {
       Rakuten: 7895.67,
       Jalan: 6750.33,
     };
-    const currency: SupportedCurrency = "SGD";
+    const currency: SupportedCurrency = "JPY";
     const { getByText } = render(
       <CompetitorPrices competitors={competitors} currency={currency} />
     );
 
     expect(getByText("Competitor Prices:")).toBeInTheDocument();
     expect(getByText("Rakuten:")).toBeInTheDocument();
-    expect(getByText("SGD 7896")).toBeInTheDocument();
+    expect(getByText("JPY 7,900")).toBeInTheDocument();
     expect(getByText("Jalan:")).toBeInTheDocument();
-    expect(getByText("SGD 6750")).toBeInTheDocument();
+    expect(getByText("JPY 6,800")).toBeInTheDocument();
   });
 });

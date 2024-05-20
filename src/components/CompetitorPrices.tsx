@@ -23,12 +23,7 @@ const CompetitorPrices: React.FC<CompetitorPricesProps> = ({
             <li key={index} className="flex items-center justify-between py-1">
               <span className="text-sm">{name}:</span>
               <span className="font-semibold text-sm">
-                {currency === "KRW"
-                  ? `${roundPrice(
-                      competitorPrice,
-                      currency
-                    ).toLocaleString()} KRW`
-                  : `${currency} ${roundPrice(competitorPrice, currency)}`}
+                {currency} {roundPrice(competitorPrice, currency)}
               </span>
             </li>
           ))}
