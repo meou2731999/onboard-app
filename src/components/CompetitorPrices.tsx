@@ -1,5 +1,6 @@
 import React from "react";
 import type { Competitors, SupportedCurrency } from "@/types";
+import { roundPrice } from "@/utils/roundPrice";
 
 interface CompetitorPricesProps {
   competitors?: Competitors;
@@ -23,8 +24,11 @@ const CompetitorPrices: React.FC<CompetitorPricesProps> = ({
               <span className="text-sm">{name}:</span>
               <span className="font-semibold text-sm">
                 {currency === "KRW"
-                  ? `${competitorPrice.toLocaleString()} KRW`
-                  : `${currency} ${competitorPrice}`}
+                  ? `${roundPrice(
+                      competitorPrice,
+                      currency
+                    ).toLocaleString()} KRW`
+                  : `${currency} ${roundPrice(competitorPrice, currency)}`}
               </span>
             </li>
           ))}
