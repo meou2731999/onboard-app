@@ -20,8 +20,8 @@ const CompetitorPrices: React.FC<CompetitorPricesProps> = ({
         <ul className="mt-2">
           {sortedCompetitors.map(([name, competitorPrice], index) => (
             <li key={index} className="flex items-center justify-between py-1">
-              <span>{name}:</span>
-              <span className="font-semibold">
+              <span className="text-sm">{name}:</span>
+              <span className="font-semibold text-sm">
                 {currency === "KRW"
                   ? `${competitorPrice.toLocaleString()} KRW`
                   : `${currency} ${competitorPrice}`}
