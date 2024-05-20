@@ -7,11 +7,11 @@ interface RatingStarsProps {
 
 const RatingStars: React.FC<RatingStarsProps> = ({ starts }) => {
   return (
-    <div className="flex">
+    <span className="flex">
       {Array.from({ length: starts }, (_, index) => (
         <StarIcon key={index} size={20} fill="#FFEA00" />
       ))}
-    </div>
+    </span>
   );
 };
 
