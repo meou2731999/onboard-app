@@ -9,7 +9,7 @@ const RatingStars: React.FC<RatingStarsProps> = ({ starts }) => {
   return (
     <div className="flex">
       {Array.from({ length: starts }, (_, index) => (
-        <StarIcon key={index} fill="#FFEA00" />
+        <StarIcon key={index} size={20} fill="#FFEA00" />
       ))}
     </div>
   );
