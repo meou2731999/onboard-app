@@ -26,7 +26,9 @@ describe("PriceInfo", () => {
     );
 
     expect(getByText("Our Price:")).toBeInTheDocument();
-    expect(getByText(`${currency} ${roundedPrice}`)).toBeInTheDocument();
+    expect(
+      getByText(`${currency} ${roundedPrice.toLocaleString()}`)
+    ).toBeInTheDocument();
   });
 
   it("renders correctly when price is undefined", () => {
@@ -35,7 +37,7 @@ describe("PriceInfo", () => {
     const { getByText } = render(<PriceInfo currency={currency} />);
 
     expect(getByText("Our Price:")).toBeInTheDocument();
-    expect(getByText(`${currency}`)).toBeInTheDocument();
+    expect(getByText("Rates unavailable")).toBeInTheDocument();
   });
 
   it("renders correctly with JPY currency", () => {
@@ -48,7 +50,9 @@ describe("PriceInfo", () => {
     );
 
     expect(getByText("Our Price:")).toBeInTheDocument();
-    expect(getByText(`${currency} ${roundedPrice}`)).toBeInTheDocument();
+    expect(
+      getByText(`${currency} ${roundedPrice.toLocaleString()}`)
+    ).toBeInTheDocument();
   });
 
   it("renders correctly with SGD currency", () => {
