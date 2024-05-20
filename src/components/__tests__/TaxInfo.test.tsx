@@ -11,7 +11,6 @@ describe("TaxInfo Component", () => {
 
     render(<TaxInfo taxesAndFees={taxesAndFees} />);
 
-    // Assert tax-inclusive text and values
     expect(screen.getByText("Tax-Inclusive:")).toBeInTheDocument();
     expect(screen.getByText("Tax: 10.5")).toBeInTheDocument();
     expect(screen.getByText("Hotel Fees: 15.75")).toBeInTheDocument();
@@ -20,7 +19,6 @@ describe("TaxInfo Component", () => {
   it("renders tax-exclusive info correctly", () => {
     render(<TaxInfo taxesAndFees={undefined} />);
 
-    // Assert tax-exclusive text
     expect(screen.getByText("Tax-Exclusive")).toBeInTheDocument();
   });
 });

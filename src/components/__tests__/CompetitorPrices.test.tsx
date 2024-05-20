@@ -11,14 +11,11 @@ describe("CompetitorPrices Component", () => {
 
     render(<CompetitorPrices competitors={competitors} currency="USD" />);
 
-    // Assert the presence of rendered competitor prices
     expect(screen.getByText("Competitor Prices:")).toBeInTheDocument();
 
-    // Assert Traveloka price
     expect(screen.getByText("Traveloka:")).toBeInTheDocument();
     expect(screen.getByText("USD 190")).toBeInTheDocument();
 
-    // Assert Expedia price
     expect(screen.getByText("Expedia:")).toBeInTheDocument();
     expect(screen.getByText("USD 163")).toBeInTheDocument();
   });
@@ -31,14 +28,11 @@ describe("CompetitorPrices Component", () => {
 
     render(<CompetitorPrices competitors={competitors} currency="KRW" />);
 
-    // Assert the presence of rendered competitor prices
     expect(screen.getByText("Competitor Prices:")).toBeInTheDocument();
 
-    // Assert Traveloka price
     expect(screen.getByText("Traveloka:")).toBeInTheDocument();
     expect(screen.getByText("300,000 KRW")).toBeInTheDocument();
 
-    // Assert Expedia price
     expect(screen.getByText("Expedia:")).toBeInTheDocument();
     expect(screen.getByText("280,000 KRW")).toBeInTheDocument();
   });
@@ -46,7 +40,6 @@ describe("CompetitorPrices Component", () => {
   it("not renders competitor if data undefined", () => {
     render(<CompetitorPrices competitors={undefined} currency="KRW" />);
 
-    // Assert the presence of rendered competitor prices
     expect(screen.queryByText("Competitor Prices:")).not.toBeInTheDocument();
   });
 });
