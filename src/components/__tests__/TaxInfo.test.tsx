@@ -11,7 +11,7 @@ describe("TaxInfo Component", () => {
 
     render(<TaxInfo taxesAndFees={taxesAndFees} />);
 
-    expect(screen.getByText("Tax-Inclusive:")).toBeInTheDocument();
+    expect(screen.getByText("Tax-Inclusive:*")).toBeInTheDocument();
     expect(screen.getByText("Tax: 10.5")).toBeInTheDocument();
     expect(screen.getByText("Hotel Fees: 15.75")).toBeInTheDocument();
   });
