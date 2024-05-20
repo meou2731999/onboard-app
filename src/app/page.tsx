@@ -1,6 +1,4 @@
-// pages/index.tsx
 "use client";
-
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import HotelComponent from "@/components/HotelComponent";
@@ -9,7 +7,10 @@ import { fetchHotelData } from "@/lib/api";
 
 const Home: React.FC = () => {
   const [hotels, setHotels] = useState<Hotel[]>([]);
-  const [currency, setCurrency] = useState<SupportedCurrency>("USD");
+  const [currency, setCurrency] = useState<SupportedCurrency>(() => {
+    const storedCurrency = localStorage.getItem("selectedCurrency");
+    return (storedCurrency as SupportedCurrency) || "USD";
+  });
 
   useEffect(() => {
     const loadHotels = async () => {
@@ -22,6 +23,7 @@ const Home: React.FC = () => {
 
   const handleCurrencyChange = (newCurrency: SupportedCurrency) => {
     setCurrency(newCurrency);
+    localStorage.setItem("selectedCurrency", newCurrency);
   };
 
   return (
