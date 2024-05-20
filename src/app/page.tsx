@@ -49,6 +49,8 @@ const Home: React.FC = () => {
           <option value="SGD">SGD</option>
           <option value="CNY">CNY</option>
           <option value="KRW">KRW</option>
+          <option value="JPY">JPY</option>
+          <option value="IDR">IDR</option>
         </select>
       </div>
 

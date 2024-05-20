@@ -28,4 +28,4 @@ export interface Hotel {
   taxes_and_fees?: TaxesAndFees;
 }
 
-export type SupportedCurrency = "USD" | "SGD" | "CNY" | "KRW";
+export type SupportedCurrency = "USD" | "SGD" | "CNY" | "KRW" | "JPY" | "IDR";
