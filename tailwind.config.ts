@@ -12,7 +12,7 @@ const config: Config = {
         "gray-scale": {
           10: "#FFFFFF",
           15: "#F9FAFC",
-          20: "f4f4f4",
+          20: "#f4f4f4",
           40: "#A1A1A1",
           60: "#737373",
           80: "#434343",
