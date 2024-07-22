@@ -8,13 +8,25 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        "gray-scale": {
+          10: "#FFFFFF",
+          15: "#F9FAFC",
+          20: "f4f4f4",
+          40: "#A1A1A1",
+          60: "#737373",
+          80: "#434343",
+          100: "#1D1D1D",
+        },
+        primary: "#8F47FF",
+        disable: "#D4BBF7",
+        neutral: "#1D1D1D",
+      },
+      fontFamily: {
+        fontFamily: "Be_Vietnam_Pro",
       },
     },
   },
-  plugins: [require("@tailwindcss/line-clamp"), require("daisyui")],
+  plugins: [require("@tailwindcss/line-clamp")],
 };
 export default config;
