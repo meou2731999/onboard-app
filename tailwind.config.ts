@@ -18,10 +18,11 @@ const config: Config = {
           80: "#434343",
           100: "#1D1D1D",
         },
-        primary: "#8F47FF",
         disable: "#D4BBF7",
         neutral: "#1D1D1D",
         secondary: "#F1ECFE",
+        primary: "#8F47FF",
+        primary5: "#8f47ff0d",
       },
       fontFamily: {
         fontFamily: "Be_Vietnam_Pro",
@@ -74,6 +75,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("@tailwindcss/line-clamp")],
+  plugins: [],
 };
 export default config;
