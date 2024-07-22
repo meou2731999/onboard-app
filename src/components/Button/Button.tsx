@@ -29,7 +29,7 @@ export const Button: React.FC<Props> = ({
         variant === "primary"
           ? "bg-primary text-white"
           : variant === "secondary"
-          ? "border border-inherit"
+          ? "border border-primary"
           : variant === "text-link"
           ? "hover:underline"
           : "!p-0"
@@ -41,7 +41,13 @@ export const Button: React.FC<Props> = ({
         <span
           className={`${
             variant === "primary" ? "text-white" : "text-inherit"
-          } decoration-inherit text-body-medium-semibold whitespace-nowrap`}
+          } ${
+            size === "small"
+              ? "text-body-small-semibold"
+              : size === "medium"
+              ? "text-body-medium-semibold"
+              : "text-body-large-semibold"
+          } decoration-inherit whitespace-nowrap`}
         >
           {text}
         </span>
