@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Message } from "../Message/Message";
 import { Protip } from "../Protip/Protip";
 import { WhichDescribe } from "../WhichDescribe/WhichDescribe";
+import { CompanyLanding } from "../CompanyLanding/CompanyLanding";
 
 export type DescribeSelection = "0" | "1" | "2";
 
@@ -14,6 +15,7 @@ export const AboutYou: React.FC = () => {
       <div className="flex flex-col gap-[25px]">
         <Protip />
         <WhichDescribe setSelection={setSelection} selection={selection} />
+        <CompanyLanding />
       </div>
     </div>
   );
