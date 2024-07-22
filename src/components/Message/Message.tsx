@@ -6,9 +6,9 @@ type Props = {
 };
 
 const messageMapping = {
-  0: `Tailor the content to your brand voice. Simply input your company’s landing page URL. You can add additional brand voices later in the configure screen`,
-  1: `Tailor the content to your brand voice. Simply input your company’s landing page URL.`,
-  2: "Tailor the content to your brand voice. Simply input your company’s landing page URL.",
+  "0": `Tailor the content to your brand voice. Simply input your company’s landing page URL. You can add additional brand voices later in the configure screen`,
+  "1": `Tailor the content to your brand voice. Simply input your company’s landing page URL.`,
+  "2": "Tailor the content to your brand voice. Simply input your company’s landing page URL.",
 };
 export const Message: React.FC<Props> = ({ selection }: Props) => {
   return (
