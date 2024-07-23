@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Button } from "../Button/Button";
 import ReloadIcon from "@/assets/ReloadIcon";
 
-export const DragDropFile: React.FC = () => {
+export const ReferencesUploadFile: React.FC = () => {
   const [isOver, setIsOver] = useState(false);
   const [files, setFiles] = useState<File[]>([]);
 
