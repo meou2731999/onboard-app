@@ -5,6 +5,7 @@ import { VoiceSuggestion } from "../VoiceSuggestion";
 import { WhichDescribe } from "../WhichDescribe";
 import { Protip } from "../Protip";
 import { Message } from "../Message";
+import { VoiceName } from "../VoiceName";
 
 export type DescribeSelection = "0" | "1" | "2";
 
@@ -21,6 +22,7 @@ export const AboutYou: React.FC = () => {
         <ReferencesUploadFile />
         <VoiceSuggestion />
         <div className="relative w-full h-[5px] bg-gray-scale-20" />
+        <VoiceName />
       </div>
     </div>
   );

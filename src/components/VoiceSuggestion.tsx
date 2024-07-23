@@ -1,5 +1,5 @@
 import SpacklesIcon from "@/assets/SpacklesIcon";
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import { Button } from "./Button";
 import ReloadIcon from "@/assets/ReloadIcon";
 
@@ -12,8 +12,8 @@ export const VoiceSuggestion: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col w-full items-end gap-[6px] relative">
-      <div className="flex flex-col items-start gap-2">
+    <div className="flex flex-col self-stretch items-end gap-[6px] relative">
+      <div className="flex self-stretch flex-col items-start gap-2">
         <p className="text-body-medium-semibold text-gray-scale-80 whitespace-nowrap">
           Preview Keoni&apos;s Brand Voice Suggestion
         </p>

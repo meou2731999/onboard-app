@@ -1,9 +1,8 @@
 "use client";
 
 import { AboutYou } from "@/components/AboutYou/AboutYou";
-import { Stepper } from "@/components/Stepper/Stepper";
-import { Title } from "@/components/Title/Title";
-
+import { Stepper } from "@/components/Stepper";
+import { Title } from "@/components/Title";
 const Home: React.FC = () => {
   return (
     <div className="bg-gray-scale-15 w-full h-full">

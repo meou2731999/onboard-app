@@ -1,5 +1,5 @@
 import React from "react";
-import type { DescribeSelection } from "../AboutYou/AboutYou";
+import type { DescribeSelection } from "./AboutYou/AboutYou";
 
 type Props = {
   selection: DescribeSelection;

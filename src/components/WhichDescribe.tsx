@@ -1,6 +1,6 @@
 import React from "react";
-import { Radiobutton } from "../Radiobutton/Radiobutton";
-import type { DescribeSelection } from "../AboutYou/AboutYou";
+import { Radiobutton } from "./Radiobutton";
+import type { DescribeSelection } from "./AboutYou/AboutYou";
 
 type Props = {
   selection: DescribeSelection;
