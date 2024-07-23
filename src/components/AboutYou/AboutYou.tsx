@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Message } from "../Message/Message";
-import { Protip } from "../Protip/Protip";
-import { WhichDescribe } from "../WhichDescribe/WhichDescribe";
 import { CompanyURLs } from "../CompanyURLs";
 import { ReferencesUploadFile } from "../ReferencesUploadFile";
 import { VoiceSuggestion } from "../VoiceSuggestion";
+import { WhichDescribe } from "../WhichDescribe";
+import { Protip } from "../Protip";
+import { Message } from "../Message";
 
 export type DescribeSelection = "0" | "1" | "2";
 
