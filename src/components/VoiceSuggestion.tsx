@@ -1,6 +1,6 @@
 import SpacklesIcon from "@/assets/SpacklesIcon";
 import React, { useCallback, useState } from "react";
-import { Button } from "../Button/Button";
+import { Button } from "./Button";
 import ReloadIcon from "@/assets/ReloadIcon";
 
 export const VoiceSuggestion: React.FC = () => {

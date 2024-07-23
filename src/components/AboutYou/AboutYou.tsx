@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Message } from "../Message/Message";
 import { Protip } from "../Protip/Protip";
 import { WhichDescribe } from "../WhichDescribe/WhichDescribe";
-import { CompanyURLs } from "../CompanyLanding/CompanyURLs";
-import { ReferencesUploadFile } from "../CompanyLanding/ReferencesUploadFile";
-import { VoiceSuggestion } from "../CompanyLanding/VoiceSuggestion";
+import { CompanyURLs } from "../CompanyURLs";
+import { ReferencesUploadFile } from "../ReferencesUploadFile";
+import { VoiceSuggestion } from "../VoiceSuggestion";
 
 export type DescribeSelection = "0" | "1" | "2";
 
@@ -20,6 +20,7 @@ export const AboutYou: React.FC = () => {
         <CompanyURLs />
         <ReferencesUploadFile />
         <VoiceSuggestion />
+        <div className="relative w-full h-[5px] bg-gray-scale-20" />
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 import React, { useCallback, useState, type ChangeEvent } from "react";
-import { Field } from "../Field/Field";
 import PlusIcon from "@/assets/PlusIcon";
 import XIcon from "@/assets/XIcon";
-import { Button } from "../Button/Button";
+import { Button } from "./Button";
+import { Field } from "./Field";
 
 export const CompanyURLs: React.FC = () => {
   const [urls, setUrls] = useState<{ value: string }[]>([{ value: "" }]);

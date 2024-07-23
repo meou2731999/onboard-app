@@ -1,7 +1,7 @@
 import FileIcon from "@/assets/FileIcon";
 import PDFIcon from "@/assets/PDFIcon";
 import React, { useState } from "react";
-import { Button } from "../Button/Button";
+import { Button } from "./Button";
 import ReloadIcon from "@/assets/ReloadIcon";
 
 export const ReferencesUploadFile: React.FC = () => {
