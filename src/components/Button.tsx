@@ -7,6 +7,8 @@ type Props = {
   onClick?: () => void;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
+  color?: "primary" | "secondary" | "error";
+  disabled?: boolean;
 };
 
 export const Button: React.FC<Props> = ({
@@ -16,10 +18,19 @@ export const Button: React.FC<Props> = ({
   onClick,
   startIcon,
   endIcon,
+  color = "primary",
+  disabled,
 }: Props) => {
   return (
     <button
-      className={`flex items-center gap-2 text-primary justify-center px-4 rounded-lg hover:bg-secondary h-fit ${
+      disabled={disabled}
+      className={`flex items-center gap-2 ${
+        color === "primary"
+          ? "text-primary"
+          : color === "secondary"
+          ? "text-gray-scale-60"
+          : ""
+      } ${
         size === "small"
           ? "py-[7px] rounded-md"
           : size === "medium"
@@ -33,7 +44,9 @@ export const Button: React.FC<Props> = ({
           : variant === "text-link"
           ? "hover:underline"
           : "!p-0"
-      }`}
+      } ${
+        disabled ? "bg-disable" : "hover:bg-secondary"
+      } justify-center px-4 rounded-lg  h-fit`}
       onClick={onClick}
     >
       {startIcon && startIcon}
