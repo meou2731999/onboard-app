@@ -26,8 +26,14 @@ export const AboutYou: React.FC = () => {
         <div className="relative w-full h-[5px] bg-gray-scale-20" />
         <VoiceName />
         <AvatarSelection />
-        <div className="w-full gap-[15px]">
+        <div className="w-full flex flex-col gap-1">
           <Button size="large" text="Save & Next" />
+          <Button
+            size="large"
+            variant="text-link"
+            color="secondary"
+            text="Skip for now"
+          />
         </div>
       </div>
     </div>
