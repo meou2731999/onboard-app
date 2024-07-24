@@ -24,7 +24,7 @@ export const Button: React.FC<Props> = ({
           ? "py-[7px] rounded-md"
           : size === "medium"
           ? "py-2.5"
-          : "py-3"
+          : "py-3 w-full"
       } ${
         variant === "primary"
           ? "bg-primary text-white"

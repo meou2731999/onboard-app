@@ -6,6 +6,8 @@ import { WhichDescribe } from "../WhichDescribe";
 import { Protip } from "../Protip";
 import { Message } from "../Message";
 import { VoiceName } from "../VoiceName";
+import { Button } from "../Button";
+import { AvatarSelection } from "../AvatarSelection";
 
 export type DescribeSelection = "0" | "1" | "2";
 
@@ -23,6 +25,10 @@ export const AboutYou: React.FC = () => {
         <VoiceSuggestion />
         <div className="relative w-full h-[5px] bg-gray-scale-20" />
         <VoiceName />
+        <AvatarSelection />
+        <div className="w-full gap-[15px]">
+          <Button size="large" text="Save & Next" />
+        </div>
       </div>
     </div>
   );
