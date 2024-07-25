@@ -57,8 +57,8 @@ export const AvatarSelection: React.FC = () => {
       <div className="relative self-stretch text-body-medium-semibold text-gray-scale-80">
         Choose avatar
       </div>
-      <div className="flex gap-5">
-        <div className="grid grid-cols-3 gap-[15px]">
+      <div className="flex gap-5 md:flex-row flex-col">
+        <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-3 gap-[15px]">
           {[1, 2, 3, 4, 5, 6].map((i) => (
             <div
               key={i}
