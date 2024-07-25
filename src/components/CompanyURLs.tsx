@@ -1,29 +1,24 @@
-import React, { useCallback, useState, type ChangeEvent } from "react";
+import React, { useCallback, useState, ChangeEvent } from "react";
 import PlusIcon from "@/assets/PlusIcon";
 import XIcon from "@/assets/XIcon";
 import { Button } from "./Button";
 import { Field } from "./Field";
 
 export const CompanyURLs: React.FC = () => {
-  const [urls, setUrls] = useState<{ value: string }[]>([{ value: "" }]);
+  const [urls, setUrls] = useState<string[]>([""]);
 
   const handleAddUrlInput = useCallback(() => {
-    setUrls([...urls, { value: "" }]);
-  }, [urls]);
+    setUrls((prevUrls) => [...prevUrls, ""]);
+  }, []);
 
-  const handleRemoveUrlInput = useCallback(
-    (index: number) => {
-      let newUrls = [...urls];
-      newUrls.splice(index, 1);
-      setUrls(newUrls);
-    },
-    [urls]
-  );
+  const handleRemoveUrlInput = useCallback((index: number) => {
+    setUrls((prevUrls) => prevUrls.filter((_, i) => i !== index));
+  }, []);
 
   const handleChangeInput = useCallback(
     (e: ChangeEvent<HTMLInputElement>, index: number) => {
-      let newUrls = [...urls];
-      newUrls[index].value = e.target.value;
+      const newUrls = [...urls];
+      newUrls[index] = e.target.value;
       setUrls(newUrls);
     },
     [urls]
@@ -36,23 +31,21 @@ export const CompanyURLs: React.FC = () => {
           Company website URLs:
         </div>
         <div className="flex flex-col gap-5">
-          {urls.map(({}, index) =>
-            index === 0 ? (
+          {urls.map((url, index) => (
+            <div key={index} className="flex items-center gap-2.5">
               <Field
-                key={index}
+                value={url}
                 onChange={(e) => handleChangeInput(e, index)}
               />
-            ) : (
-              <div key={index} className="flex items-center gap-2.5">
-                <Field onChange={(e) => handleChangeInput(e, index)} />{" "}
+              {index > 0 && (
                 <Button
                   variant="icon"
                   startIcon={<XIcon />}
                   onClick={() => handleRemoveUrlInput(index)}
                 />
-              </div>
-            )
-          )}
+              )}
+            </div>
+          ))}
         </div>
       </div>
       {urls.length < 3 && (
