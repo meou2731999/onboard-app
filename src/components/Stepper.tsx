@@ -13,7 +13,7 @@ const Step: React.FC<{
   isCompleted: boolean;
 }> = ({ number, label, isCurrent, isCompleted }) => {
   return (
-    <div className="items-center justify-center flex gap-[15px]">
+    <div className="items-center flex gap-[15px]">
       <div
         className={`flex items-center justify-center gap-2.5 p-1 w-[25px] h-[25px] rounded-full overflow-hidden ${
           isCurrent
@@ -46,7 +46,7 @@ const Step: React.FC<{
 
 export const Stepper: React.FC<Props> = ({ state }: Props) => {
   return (
-    <div className="flex items-center gap-2.5 px-2.5 py-6 text-primary">
+    <div className="flex flex-col sm:flex-row item-start sm:items-center gap-2.5 px-2.5 py-6 text-primary">
       <Step
         number={1}
         label="About You"

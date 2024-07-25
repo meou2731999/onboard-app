@@ -1,6 +1,6 @@
 export const Protip: React.FC = () => {
   return (
-    <div className="flex items-center justify-center gap-2.5 p-2.5 relative bg-[#f0ebfd] rounded overflow-hidden border-[0.5px] border-solid border-primary">
+    <div className="flex items-center justify-center gap-2.5 p-2.5 bg-secondary rounded overflow-hidden border-[0.5px] border-solid border-primary">
       <p className="text-gray-scale-80">
         <span className="text-body-medium-semibold">✨ Pro Tip: </span>
         <span className="text-body-medium-regular">

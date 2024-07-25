@@ -19,11 +19,11 @@ const Home: React.FC = () => {
 
   return (
     <div className="bg-gray-scale-15 w-full h-full">
-      <div className="mx-auto max-w-[680px] gap-5 py-7">
+      <div className="mx-auto max-w-[680px] gap-5 py-7 px-4 md:px-0">
         <Title />
         <div>
           <Stepper state={3} />
-          <div className="flex flex-col items-start gap-[35px] px-[50px] py-10 self-stretch w-full bg-gray-scale-10">
+          <div className="flex flex-col items-start gap-[35px] p-8 md:px-[50px] md:py-10 self-stretch w-full bg-gray-scale-10">
             <Message selection={selection} />
             <div className="flex flex-col gap-[25px]">
               <Protip />

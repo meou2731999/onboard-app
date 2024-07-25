@@ -26,7 +26,7 @@ export const WhichDescribe: React.FC<Props> = ({
       <div className="relative self-stretch text-body-medium-semibold text-gray-scale-80">
         Which describe you?
       </div>
-      <div className="gap-[15px] self-stretch w-full flex relative">
+      <div className="gap-[15px] self-stretch w-full flex sm:flex-row flex-col relative">
         {RADIO_OPTIONS.map(({ value, label }) => (
           <Radiobutton
             key={value}

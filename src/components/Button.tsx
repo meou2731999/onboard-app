@@ -45,7 +45,7 @@ export const Button: React.FC<Props> = ({
     "text-body-small-semibold": size === "small",
     "text-body-medium-semibold": size === "medium",
     "text-body-large-semibold": size === "large",
-    "decoration-inherit whitespace-nowrap": true,
+    "decoration-inherit": true,
   });
 
   return (

@@ -16,7 +16,7 @@ describe("Button Component", () => {
     render(<Button variant="secondary" size="small" text="Secondary Small" />);
     const buttonElement = screen.getByText("Secondary Small");
     expect(buttonElement).toHaveClass(
-      "text-inherit text-body-small-semibold decoration-inherit whitespace-nowrap"
+      "text-inherit text-body-small-semibold decoration-inherit"
     );
   });
 

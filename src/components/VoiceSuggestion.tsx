@@ -23,7 +23,7 @@ export const VoiceSuggestion: React.FC = () => {
   return (
     <div className="flex flex-col self-stretch items-end gap-[6px] relative">
       <div className="flex self-stretch flex-col items-start gap-2">
-        <p className="text-body-medium-semibold text-gray-scale-80 whitespace-nowrap">
+        <p className="text-body-medium-semibold text-gray-scale-80">
           Preview Keoni&apos;s Brand Voice Suggestion
         </p>
         <div className="flex flex-col items-center justify-center gap-2.5 p-5 self-stretch w-full bg-primary5 rounded-lg overflow-hidden">
