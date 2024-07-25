@@ -128,6 +128,7 @@ export const AvatarSelection: React.FC = () => {
         )}
       </div>
       <input
+        data-testid="file-input"
         ref={inputFileRef}
         type="file"
         name="file_upload"

@@ -10,3 +10,6 @@ jest.mock('next/image', () => ({
         return <img src={src} alt={alt} {...rest} />;
     },
 }));
+global.URL.createObjectURL = jest.fn(() => "mockedURL");
+global.URL.revokeObjectURL = jest.fn(() => "revokeObjectURL");
+
