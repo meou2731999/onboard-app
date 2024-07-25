@@ -1,14 +1,23 @@
-import SpacklesIcon from "@/assets/SpacklesIcon";
 import React, { useState } from "react";
+import SpacklesIcon from "@/assets/SpacklesIcon";
 import { Button } from "./Button";
 import ReloadIcon from "@/assets/ReloadIcon";
 
+const PLACEHOLDER_TEXT =
+  "Fill out all the fields, and we’ll craft the perfect brand voice for you!";
+const GENERATE_TEXT = "Generate Now";
+const CONTENT_TEXT =
+  "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur ex repellendus atque, incidunt enim adipisci. Quia id labore rerum necessitatibus, ea, eaque consectetur fugiat modi dolorum delectus incidunt soluta aut.";
+
 export const VoiceSuggestion: React.FC = () => {
-  const [content, setContent] = useState<string>();
-  const handleClick = () => {
-    setContent(
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur ex repellendus atque, incidunt enim adipisci. Quia id labore rerum necessitatibus, ea, eaque consectetur fugiat modi dolorum delectus incidunt soluta aut."
-    );
+  const [content, setContent] = useState<string | undefined>(undefined);
+
+  const handleGenerateClick = () => {
+    setContent(CONTENT_TEXT);
+  };
+
+  const handleRegenerateClick = () => {
+    setContent(undefined);
   };
 
   return (
@@ -26,16 +35,13 @@ export const VoiceSuggestion: React.FC = () => {
             <>
               <SpacklesIcon />
               <p className="text-center w-fit text-body-medium-regular">
-                <span className="text-gray-scale-60">
-                  Fill out all the fields, and we&apos;ll craft the perfect
-                  brand voice for you!
-                </span>
+                <span className="text-gray-scale-60">{PLACEHOLDER_TEXT}</span>
                 <br />
                 <span
                   className="text-body-medium-regular text-primary underline hover:cursor-pointer"
-                  onClick={handleClick}
+                  onClick={handleGenerateClick}
                 >
-                  Generate Now
+                  {GENERATE_TEXT}
                 </span>
               </p>
             </>
@@ -47,7 +53,7 @@ export const VoiceSuggestion: React.FC = () => {
           variant="text-link"
           text="Regenerate"
           startIcon={<ReloadIcon />}
-          onClick={() => setContent(undefined)}
+          onClick={handleRegenerateClick}
         />
       )}
     </div>
