@@ -1,7 +1,7 @@
 // ReferencesUploadFile.test.tsx
 
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { ReferencesUploadFile } from "./ReferencesUploadFile";
 
 describe("ReferencesUploadFile Component", () => {
@@ -30,7 +30,7 @@ describe("ReferencesUploadFile Component", () => {
     expect(screen.getByText("Change File")).toBeInTheDocument();
   });
 
-  test("handles drag and drop events", () => {
+  test("handles drag and drop events", async () => {
     const { container } = render(<ReferencesUploadFile />);
 
     const dropzone = container.querySelector('div[role="presentation"]');
@@ -42,10 +42,12 @@ describe("ReferencesUploadFile Component", () => {
       files: [file],
     };
 
-    dropzone && fireEvent.dragOver(dropzone, { dataTransfer });
-    expect(dropzone).toHaveClass("border-primary-dark");
+    await waitFor(() => {
+      dropzone && fireEvent.dragOver(dropzone, { dataTransfer });
+      expect(dropzone).toHaveClass("border-primary-dark");
 
-    dropzone && fireEvent.drop(dropzone, { dataTransfer });
-    expect(screen.getByText("example.pdf")).toBeInTheDocument();
+      dropzone && fireEvent.drop(dropzone, { dataTransfer });
+      expect(screen.getByText("example.pdf")).toBeInTheDocument();
+    });
   });
 });
