@@ -7,6 +7,7 @@ type Props = {
 const XIcon: React.FC<Props> = ({ fill = "#D52F25" }: Props) => {
   return (
     <svg
+      data-testid="x-icon"
       width="32"
       height="32"
       viewBox="0 0 32 32"

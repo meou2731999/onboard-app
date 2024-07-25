@@ -7,6 +7,7 @@ type Props = {
 const PlusCircleIcon: React.FC<Props> = ({ fill = "#8F47FF" }: Props) => {
   return (
     <svg
+      data-testid="plus-circle-icon"
       width="33"
       height="33"
       viewBox="0 0 33 33"

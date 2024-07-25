@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import React from "react";
 
 type Props = {
@@ -21,50 +22,42 @@ export const Button: React.FC<Props> = ({
   color = "primary",
   disabled,
 }: Props) => {
+  const buttonClasses = clsx(
+    "flex items-center gap-2 justify-center px-4 rounded-lg h-fit",
+    {
+      "text-primary": color === "primary",
+      "text-gray-scale-60": color === "secondary",
+      "text-error": color === "error",
+      "py-[7px] rounded-md": size === "small",
+      "py-2.5": size === "medium",
+      "py-3 w-full": size === "large",
+      "bg-primary text-white": variant === "primary",
+      "border border-primary": variant === "secondary",
+      "hover:underline": variant === "text-link",
+      "!p-0": variant === "icon",
+      "!bg-disable": disabled,
+      "hover:bg-secondary": !disabled && variant !== "icon",
+    }
+  );
+
+  const textClasses = clsx({
+    "text-white": variant === "primary",
+    "text-inherit": variant !== "primary",
+    "text-body-small-semibold": size === "small",
+    "text-body-medium-semibold": size === "medium",
+    "text-body-large-semibold": size === "large",
+    "decoration-inherit whitespace-nowrap": true,
+  });
+
   return (
     <button
+      role="button"
       disabled={disabled}
-      className={`flex items-center gap-2 ${
-        color === "primary"
-          ? "text-primary"
-          : color === "secondary"
-          ? "text-gray-scale-60"
-          : ""
-      } ${
-        size === "small"
-          ? "py-[7px] rounded-md"
-          : size === "medium"
-          ? "py-2.5"
-          : "py-3 w-full"
-      } ${
-        variant === "primary"
-          ? "bg-primary text-white"
-          : variant === "secondary"
-          ? "border border-primary"
-          : variant === "text-link"
-          ? "hover:underline"
-          : "!p-0"
-      } ${
-        disabled ? "bg-disable" : "hover:bg-secondary"
-      } justify-center px-4 rounded-lg  h-fit`}
+      className={buttonClasses}
       onClick={onClick}
     >
       {startIcon && startIcon}
-      {text && (
-        <span
-          className={`${
-            variant === "primary" ? "text-white" : "text-inherit"
-          } ${
-            size === "small"
-              ? "text-body-small-semibold"
-              : size === "medium"
-              ? "text-body-medium-semibold"
-              : "text-body-large-semibold"
-          } decoration-inherit whitespace-nowrap`}
-        >
-          {text}
-        </span>
-      )}
+      {text && <span className={textClasses}>{text}</span>}
       {endIcon && endIcon}
     </button>
   );

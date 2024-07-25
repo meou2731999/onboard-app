@@ -7,6 +7,7 @@ type Props = {
 const ReloadIcon: React.FC<Props> = ({ fill = "#8F47FF" }: Props) => {
   return (
     <svg
+      data-testid="reload-icon"
       width="16"
       height="17"
       viewBox="0 0 16 17"

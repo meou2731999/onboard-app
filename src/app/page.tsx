@@ -39,7 +39,7 @@ const Home: React.FC = () => {
               <VoiceName />
               <AvatarSelection />
               <div className="w-full flex flex-col gap-1">
-                <Button size="large" text="Save & Next" />
+                <Button size="large" text="Save & Next" disabled />
                 <Button
                   size="large"
                   variant="text-link"
