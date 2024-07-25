@@ -19,6 +19,7 @@ export const Radiobutton: React.FC<Props> = ({
       <input
         className="w-5 h-5 shrink-0 accent-primary"
         type="radio"
+        role="radio"
         checked={checked}
         readOnly
       />

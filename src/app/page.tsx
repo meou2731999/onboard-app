@@ -11,9 +11,8 @@ import { Title } from "@/components/Title";
 import { VoiceName } from "@/components/VoiceName";
 import { VoiceSuggestion } from "@/components/VoiceSuggestion";
 import { WhichDescribe } from "@/components/WhichDescribe";
+import type { DescribeSelection } from "@/types/SelectionType";
 import { useState } from "react";
-
-export type DescribeSelection = "0" | "1" | "2";
 
 const Home: React.FC = () => {
   const [selection, setSelection] = useState<DescribeSelection>("0");
