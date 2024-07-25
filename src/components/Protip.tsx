@@ -1,8 +1,4 @@
-"use client";
-
-import React from "react";
-
-export const Protip = (): JSX.Element => {
+export const Protip: React.FC = () => {
   return (
     <div className="flex items-center justify-center gap-2.5 p-2.5 relative bg-[#f0ebfd] rounded overflow-hidden border-[0.5px] border-solid border-primary">
       <p className="text-gray-scale-80">

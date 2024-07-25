@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import React from "react";
 
 type Props = {
   variant?: "secondary" | "text-link" | "primary" | "icon";

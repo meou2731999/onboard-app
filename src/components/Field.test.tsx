@@ -1,6 +1,6 @@
 // Field.test.tsx
 
-import React from "react";
+
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Field } from "./Field";
 

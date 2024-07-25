@@ -1,7 +1,6 @@
 import CheckedIcon from "@/assets/CheckedIcon";
 import LineIcon from "@/assets/LineIcon";
 import PropTypes from "prop-types";
-import React from "react";
 
 interface Props {
   state: 1 | 2 | 3 | 4;

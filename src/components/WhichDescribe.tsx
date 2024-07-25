@@ -1,4 +1,3 @@
-import React from "react";
 import { Radiobutton } from "./Radiobutton";
 import type { DescribeSelection } from "./AboutYou/AboutYou";
 

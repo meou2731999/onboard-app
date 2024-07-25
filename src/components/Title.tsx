@@ -1,5 +1,3 @@
-import React from "react";
-
 export const Title: React.FC = () => {
   return (
     <div className="flex flex-col items-start relative self-stretch w-full">
