@@ -1,15 +1,17 @@
-# Onboard Search Application
+# Onboard Application
 
-This project is a onboard application built with Next.js, TypeScript, and Tailwind CSS. It fetches onboard data and their prices from an external API, displays them in a user-friendly interface, and supports currency selection and price comparison with competitors.
+## Overview
+This project is a React-based web application designed to provide a dynamic and user-friendly interface. It includes various components like buttons, form fields, steppers, and upload functionalities to create a cohesive user experience.
+
+https://www.figma.com/design/fLWMNWvXXifNAuS1P2xa57/Onboarding-Screens?node-id=1-13193&t=tKPr8S71rBgZgqMK-0
 
 ## Features
 
-- Fetch and display onboard data from an external API
-- Show onboard prices in different currencies
-- Compare onboard prices with competitors
-- Display savings if our price is lower than competitors'
-- Preserve last selected currency on page refresh
-- Responsive design with Tailwind CSS
+- Customizable Buttons: Flexible button components with different variants and sizes.
+- Dynamic Form Fields: Easily configurable form fields to collect user input.
+- Stepper Component: Visual step indicator to guide users through a multi-step process.
+- File Upload: Drag-and-drop and file selection options for user uploads.
+- State Management: Uses React state and context to manage application state.
 
 ## Technologies Used
 
@@ -18,7 +20,52 @@ This project is a onboard application built with Next.js, TypeScript, and Tailwi
 - TypeScript
 - Tailwind CSS
 
-## Installation
+## Components
+### Button
+A versatile button component with support for different variants, sizes, and icons.
+
+#### Props:
+
+- variant: Type of button (e.g., "primary", "secondary").
+- size: Size of the button (e.g., "small", "medium").
+- text: Button label.
+- onClick: Click event handler.
+- startIcon: Icon to display at the start.
+- endIcon: Icon to display at the end.
+- color: Button color (e.g., "primary", "secondary").
+- disabled: Whether the button is disabled.
+### Field
+A form field component for text input with optional placeholder.
+
+#### Props:
+
+- value: Input value.
+- onChange: Change event handler.
+### Stepper
+A step indicator to show progress in a multi-step process.
+
+#### Props:
+
+state: Current step (1 through 4).
+### VoiceName
+A component for entering a brand voice name.
+
+### VoiceSuggestion
+Provides a preview and generates a brand voice suggestion.
+
+### ReferencesUploadFile
+Handles file uploads with drag-and-drop functionality.
+
+### WhichDescribe
+Allows the user to select how they want to describe their brand voice.
+
+## Getting Started
+
+### Prerequisites
+- Node.js
+- npm or yarn
+
+### Installation
 
 - Clone the repository:
 
@@ -49,22 +96,6 @@ npm run dev
 ```
 npm test
 ```
-
-## Usage
-
-- Select a currency from the dropdown menu to see onboard prices in the selected currency.
-- The last selected currency will be saved and used when you refresh the page.
-- Competitor prices are displayed and compared with our price. Savings are shown if our price is lower.
-
-## API Endpoints
-
-- onboards Data: https://interview-api.vercel.app/api/onboards/tokyo
-- Prices Data: https://interview-api.vercel.app/api/onboards/tokyo/1/{currency}
-
-## Project Structure
-
-- The project structure follows standard practices for a Next.js application.
-- The main components are located in the src/components directory, and the API fetching logic is in src/lib/api.ts.
 
 ## Contact
 
