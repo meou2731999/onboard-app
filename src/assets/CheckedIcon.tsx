@@ -10,6 +10,7 @@ const CheckedIcon: React.FC<Props> = ({ fill = "white" }: Props) => {
       viewBox="0 0 17 17"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      data-testid="checked-icon"
     >
       <path
         fillRule="evenodd"
