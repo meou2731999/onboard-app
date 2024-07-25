@@ -1,5 +1,3 @@
-import React, { useMemo } from "react";
-
 type Props = {
   onClick: () => void;
   label: string;
@@ -22,7 +20,7 @@ export const Radiobutton: React.FC<Props> = ({
         className="w-5 h-5 shrink-0 accent-primary"
         type="radio"
         checked={checked}
-        onChange={onClick}
+        readOnly
       />
       <p className="text-body-medium-regular text-gray-scale-60">{label}</p>
     </div>
